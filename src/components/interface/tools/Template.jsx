@@ -1,44 +1,13 @@
-"use client";
 import React from "react";
-import { useStore } from "@/store/useStore";
-import { Input } from "../Input";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import IconOne from "../icons/IconOne";
 
-
-function ToolTwo() {
-  const { concreteStrength, setConcreteStrength, setFcsolve } = useStore();
-
-  const calculateStrengthWithSafetyFactor = () => {
-    let safetyFactor = 0;
-    if (concreteStrength < 210) {
-      safetyFactor = 70;
-    } else if (concreteStrength >= 210 && concreteStrength <= 350) {
-      safetyFactor = 84;
-    } else {
-      safetyFactor = 98;
-    }
-    const totalStrength = concreteStrength + safetyFactor;
-    setFcsolve(
-      `La resistencia del concreto con un factor de seguridad es: ${totalStrength}`
-    );
-
-     
-  };
+function Template() {
   return (
     <>
       <Dialog>
-        <DialogTrigger className="font-sans text-xs h-20 w-20 text-white">
+        <DialogTrigger className="bg-gradient-to-r font-sans text-xs h-20 w-20 from-cyan-500 to-blue-500 mx-auto p-2 text-white m-2 rounded-md">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
-            <p>Paso Dos</p>
+            <p>Datos Generales</p>
           </div>
         </DialogTrigger>
         <DialogContent>
@@ -46,7 +15,7 @@ function ToolTwo() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">Aress you absolutely sure?</p>
+                <p className="font-sans">Are you absolutely sure?</p>
               </div>
             </DialogTitle>
             <DialogDescription asChild="asChild">
@@ -70,7 +39,17 @@ function ToolTwo() {
                       />
                     </div>
                     <div className="flex mx-auto">
-                      
+                      <label className="w-1/2 px-2 text-stone-600 text-start">
+                        TMN del agregado
+                      </label>
+                      <Input
+                        type="number"
+                        value={concreteStrength}
+                        onChange={(e) =>
+                          setConcreteStrength(parseInt(e.target.value))
+                        }
+                        placeholder="Ingrese la resistencia del concreto"
+                      />
                     </div>
                   </div>
                   <div className="w-[10%] border ">
@@ -83,6 +62,10 @@ function ToolTwo() {
                   </div>
                 </div>
               </div>
+
+              <div>
+                <ToolTwo />
+              </div>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -91,4 +74,4 @@ function ToolTwo() {
   );
 }
 
-export default ToolTwo;
+export default Template;

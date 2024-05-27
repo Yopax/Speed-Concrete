@@ -1,11 +1,13 @@
 import React from 'react'
 import ToolOne from './tools/ToolOne'
+import ToolTwo from './tools/ToolTwo'
 
 function BarNav() {
   return (
     <>
-      <div className='flex w-full mx-auto h-20 bg-sky-300'>
+      <div className='flex w-full h-20 bg-gradient-to-r from-cyan-500 to-blue-500 divide-x'>
         <ToolOne/>
+        <ToolTwo/>
       </div>
     </>
   )

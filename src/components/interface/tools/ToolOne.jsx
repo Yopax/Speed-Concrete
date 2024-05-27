@@ -59,7 +59,7 @@ function ToolOne() {
   return (
     <>
       <Dialog>
-        <DialogTrigger className="bg-gradient-to-r font-sans text-xs h-20 w-20 from-cyan-500 to-blue-500 mx-auto p-2 text-white m-2 rounded-md">
+        <DialogTrigger className="font-sans text-xs h-20 w-20  text-white">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
             <p>Datos Generales</p>
@@ -124,10 +124,6 @@ function ToolOne() {
                     </button>
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <ToolTwo />
               </div>
             </DialogDescription>
           </DialogHeader>

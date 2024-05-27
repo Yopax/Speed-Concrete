@@ -11,6 +11,8 @@ const useStore = create((set) => ({
   fcsolve: "",
   setFcsolve: (value) => set({ fcsolve: value }),
 
+
+
 }));
  
 
