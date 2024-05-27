@@ -9,15 +9,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import ToolTwo from "./ToolTwo";
 import IconOne from "../icons/IconOne";
 import { AiOutlineSave } from "react-icons/ai";
 
-import { Input } from "../Input";
-
 function ToolOne() {
-  const claseOne =
-    "text-gray-700 dark:text-white border border-solid text-center border-[#DFE3E8]  w-[120px] text-sm py-1";
   const [fila, setFila] = useState(null);
   const [columna, setColumna] = useState(null);
   const setResultado = useStore((state) => state.setResultado);
@@ -62,7 +57,7 @@ function ToolOne() {
         <DialogTrigger className="font-sans text-xs h-20 w-20  text-white">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
-            <p>Datos Generales</p>
+            <p>Paso Uno</p>
           </div>
         </DialogTrigger>
         <DialogContent>
@@ -79,13 +74,13 @@ function ToolOne() {
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">
-                      <label className="w-1/2 px-2 text-stone-600 text-start">
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
                         Selección el asentamiento
                       </label>
                       <select
                         value={fila === null ? "" : fila}
                         onChange={(e) => setFila(parseInt(e.target.value))}
-                        className="flex h-5 w-1/2 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
+                        className="flex h-5 w-1/3 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
                       >
                         <option value="">Selecciona</option>
                         {Object.entries(filaOptions).map(([index, label]) => (
@@ -96,13 +91,13 @@ function ToolOne() {
                       </select>
                     </div>
                     <div className="flex mx-auto">
-                      <label className="w-1/2 px-2 text-stone-600 text-start">
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
                         TMN del agregado
                       </label>
                       <select
                         value={columna === null ? "" : columna}
                         onChange={(e) => setColumna(parseInt(e.target.value))}
-                        className="flex h-5 w-1/2 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
+                        className="flex h-5 w-1/3 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
                       >
                         <option value="">Selecciona</option>
                         {Object.entries(columnaOptions).map(

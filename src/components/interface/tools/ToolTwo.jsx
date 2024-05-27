@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useStore } from "@/store/useStore";
+import { useStore } from "@/store/useStore"; // Asegúrate de que la ruta sea correcta
 import { Input } from "../Input";
 import {
   Dialog,
@@ -11,10 +11,28 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import IconOne from "../icons/IconOne";
-
+import { AiOutlineSave } from "react-icons/ai";
 
 function ToolTwo() {
-  const { concreteStrength, setConcreteStrength, setFcsolve } = useStore();
+  const {
+    concreteStrength,
+    setConcreteStrength,
+    setFcsolve,
+    fcsolve,
+    concretoConAire,
+    calculateConcretoConAire,
+    densidadCemento,
+    setDensidadCemento,
+  } = useStore((state) => ({
+    concreteStrength: state.concreteStrength,
+    setConcreteStrength: state.setConcreteStrength,
+    setFcsolve: state.setFcsolve,
+    fcsolve: state.fcsolve,
+    concretoConAire: state.concretoConAire,
+    calculateConcretoConAire: state.calculateConcretoConAire,
+    densidadCemento: state.densidadCemento,
+    setDensidadCemento: state.setDensidadCemento,
+  }));
 
   const calculateStrengthWithSafetyFactor = () => {
     let safetyFactor = 0;
@@ -26,12 +44,10 @@ function ToolTwo() {
       safetyFactor = 98;
     }
     const totalStrength = concreteStrength + safetyFactor;
-    setFcsolve(
-      `La resistencia del concreto con un factor de seguridad es: ${totalStrength}`
-    );
-
-     
+    setFcsolve(totalStrength);
+    calculateConcretoConAire(totalStrength);
   };
+
   return (
     <>
       <Dialog>
@@ -46,19 +62,19 @@ function ToolTwo() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">Aress you absolutely sure?</p>
+                <p className="font-sans">¿Estás absolutamente seguro?</p>
               </div>
             </DialogTitle>
-            <DialogDescription asChild="asChild">
+            <DialogDescription asChild>
               <div>
                 <p className="font-sans text-start mb-2">
-                  Exction Description One
+                  Descripción exacta uno
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">
-                      <label className="w-1/2 px-2 text-stone-600 text-start">
-                        Selección el asentamiento
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
+                        Resistencia inicial(f´c)
                       </label>
                       <Input
                         type="number"
@@ -70,15 +86,25 @@ function ToolTwo() {
                       />
                     </div>
                     <div className="flex mx-auto">
-                      
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
+                        Densidad del cemento(g/cm3)
+                      </label>
+                      <Input
+                        type="number"
+                        value={densidadCemento}
+                        onChange={(e) =>
+                          setDensidadCemento(parseInt(e.target.value))
+                        }
+                        placeholder="Ingrese la resistencia del concreto"
+                      />
                     </div>
                   </div>
                   <div className="w-[10%] border ">
                     <button
-                      className="w-[20%] py-1 mb-2  bg-sky-700 text-white font-semibold rounded-md hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="flex items-center text-xl justify-center w-full h-full bg-sky-700 text-white hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                       onClick={calculateStrengthWithSafetyFactor}
                     >
-                      Guardar
+                      <AiOutlineSave />
                     </button>
                   </div>
                 </div>
