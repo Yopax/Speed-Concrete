@@ -15,6 +15,7 @@ import { AiOutlineSave } from "react-icons/ai";
 function ToolOne() {
   const [fila, setFila] = useState(null);
   const [columna, setColumna] = useState(null);
+  const setTMNAgregado = useStore((state) => state.setTMNAgregado);
   const setResultado = useStore((state) => state.setResultado);
   const filaOptions = { 0: "1-2", 1: "3-4", 2: "6-7" };
   const columnaOptions = {
@@ -27,11 +28,13 @@ function ToolOne() {
     6: "3”",
     7: "6”",
   };
+
   const datosTabla = [
     [207, 199, 190, 179, 166, 154, 130, 113],
     [228, 216, 205, 193, 181, 169, 145, 124],
     [243, 228, 216, 202, 190, 178, 160, null],
   ];
+
   const buscarValor = (fila, columna) => {
     if (
       fila !== null &&
@@ -46,9 +49,45 @@ function ToolOne() {
       return null;
     }
   };
+
+  const calcularValor = (columna) => {
+    let valor;
+    if (columna === 0) {
+      valor = 3;
+    } else if (columna === 1) {
+      valor = 2.5;
+    } else if (columna === 2) {
+      valor = 2;
+    } else if (columna === 3) {
+      valor = 1.5;
+    } else if (columna === 4) {
+      valor = 1;
+    } else if (columna === 5) {
+      valor = 0.5;
+    } else if (columna === 6) {
+      valor = 0.3;
+    } else {
+      console.log("La columna está fuera de rango.");
+      return null;
+    }
+    return valor;
+  };
+
   const handleSubmit = () => {
     const valorObtenido = buscarValor(fila, columna);
-    setResultado(valorObtenido / 1000);
+    const valorCalculado = calcularValor(columna);
+    
+    // Llamar correctamente a calcularValor
+    console.log(`Valor obtenido: ${valorObtenido}`);
+    console.log(`Valor calculado: ${valorCalculado}`);
+
+    if (valorObtenido !== null && valorCalculado !== null) {
+      setResultado(valorObtenido / 1000);
+      setTMNAgregado(valorCalculado);
+
+    } else {
+      console.log("No se pudo calcular el valor debido a valores nulos.");
+    }
   };
 
   return (
@@ -70,7 +109,9 @@ function ToolOne() {
             </DialogTitle>
             <DialogDescription asChild="asChild">
               <div>
-                <p className="font-sans text-start mb-2">Exction Description One</p>
+                <p className="font-sans text-start mb-2">
+                  Exction Description One
+                </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">

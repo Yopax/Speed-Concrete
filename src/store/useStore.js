@@ -53,7 +53,13 @@ const useStore = create((set) => ({
   densidadCemento: 0,
   setDensidadCemento: (value) => set({ densidadCemento: value }),
 
+  /* 04. Contenido de aire */
+  tmnAgregado: null,
+  setTMNAgregado: (tmn) => set({ tmnAgregado: tmn }),
 
+  /* 05. calculo del volumen de agragado grueso */
+  vag: 0,
+  setVAG: (vag) => set({ vag }),
 
 }));
  

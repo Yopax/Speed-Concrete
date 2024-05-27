@@ -18,8 +18,6 @@ function ToolTwo() {
     concreteStrength,
     setConcreteStrength,
     setFcsolve,
-    fcsolve,
-    concretoConAire,
     calculateConcretoConAire,
     densidadCemento,
     setDensidadCemento,
