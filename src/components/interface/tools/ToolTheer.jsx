@@ -6,9 +6,7 @@ import { useStore } from "@/store/useStore";
 function ToolTheer() {
   const [tmn, setTmn] = useState("");
   const [mf, setMf] = useState("");
-  const [densidad, setDensidad] = useState("");
   const setVAG = useStore((state) => state.setVAG);
-
   const handleCalculate = () => {
     const table = {
       '3/8"': { 2.4: 0.5, 2.6: 0.48, 2.8: 0.46, 3: 0.44 },
@@ -37,25 +35,30 @@ function ToolTheer() {
         <div>
           <label>
             TMN:
-            <input
-              type="text"
-              value={tmn}
-              onChange={(e) => setTmn(e.target.value)}
-            />
+            <select value={tmn} onChange={(e) => setTmn(e.target.value)}>
+              <option value="">Seleccione TMN</option>
+              <option value='3/8"'>3/8"</option>
+              <option value='1/2"'>1/2"</option>
+              <option value='3/4"'>3/4"</option>
+              <option value='1"'>1"</option>
+              <option value='1 1/2"'>1 1/2"</option>
+              <option value='2"'>2"</option>
+              <option value='3"'>3"</option>
+              <option value='6"'>6"</option>
+            </select>
           </label>
         </div>
         <div>
           <label>
             MF:
-            <input
-              type="text"
-              value={mf}
-              onChange={(e) => setMf(e.target.value)}
-            />
+            <select value={mf} onChange={(e) => setMf(e.target.value)}>
+              <option value="">Seleccione MF</option>
+              <option value={2.4}>2.4</option>
+              <option value={2.6}>2.6</option>
+              <option value={2.8}>2.8</option>
+              <option value={3}>3</option>
+            </select>
           </label>
-        </div>
-        <div>
-          
         </div>
         <button onClick={handleCalculate}>Calcular V.A.G</button>
       </div>
