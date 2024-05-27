@@ -1,7 +1,4 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { useStore } from "@/store/useStore";
+import React from 'react';
 import {
     Dialog,
     DialogContent,
@@ -13,38 +10,14 @@ import {
 import IconOne from "../icons/IconOne";
 import { AiOutlineSave } from "react-icons/ai";
 
-function ToolTheer() {
-  const [tmn, setTmn] = useState("");
-  const [mf, setMf] = useState("");
-  const setVAG = useStore((state) => state.setVAG);
-  const handleCalculate = () => {
-    const table = {
-      '3/8"': { 2.4: 0.5, 2.6: 0.48, 2.8: 0.46, 3: 0.44 },
-      '1/2"': { 2.4: 0.59, 2.6: 0.57, 2.8: 0.55, 3: 0.53 },
-      '3/4"': { 2.4: 0.66, 2.6: 0.64, 2.8: 0.62, 3: 0.6 },
-      '1"': { 2.4: 0.71, 2.6: 0.69, 2.8: 0.67, 3: 0.65 },
-      '1 1/2"': { 2.4: 0.76, 2.6: 0.74, 2.8: 0.72, 3: 0.7 },
-      '2"': { 2.4: 0.78, 2.6: 0.76, 2.8: 0.74, 3: 0.72 },
-      '3"': { 2.4: 0.81, 2.6: 0.79, 2.8: 0.77, 3: 0.75 },
-      '6"': { 2.4: 0.87, 2.6: 0.85, 2.8: 0.83, 3: 0.81 },
-    };
-
-    const coeficiente = table[tmn]?.[mf];
-    if (coeficiente) {
-      const agregadoGrueso = coeficiente * 1610;
-      const vag = agregadoGrueso / 2620;
-      setVAG(vag);
-    } else {
-      alert("Por favor, ingrese valores válidos.");
-    }
-  };
+function ToolFour() {
   return (
     <>
       <Dialog>
         <DialogTrigger className=" font-sans text-xs h-20 w-20 p-2 text-white ">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
-            <p>Paso 3</p>
+            <p>Paso 4</p>
           </div>
         </DialogTrigger>
         <DialogContent>
@@ -58,7 +31,7 @@ function ToolTheer() {
             <DialogDescription asChild="asChild">
               <div>
                 <p className="font-sans text-start mb-2">
-                  Exction Description One
+                  Exction Description Four
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
@@ -114,7 +87,7 @@ function ToolTheer() {
         </DialogContent>
       </Dialog>
     </>
-  );
+  )
 }
 
-export default ToolTheer;
+export default ToolFour

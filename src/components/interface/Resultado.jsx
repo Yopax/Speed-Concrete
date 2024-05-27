@@ -21,6 +21,14 @@ function Resultado() {
   }));
 
   const densidadConvertido = densidadCemento*1000;
+  const volAire = isNaN(parseFloat(tmnAgregado / 100)) ? 0 : parseFloat(tmnAgregado / 100);
+const volCemento = isNaN(parseFloat((((resultado * 1000) / concretoConAire) / densidadConvertido).toFixed(4))) ? 0 : parseFloat((((resultado * 1000) / concretoConAire) / densidadConvertido).toFixed(4));
+const volAgua = isNaN(parseFloat(resultado)) ? 0 : parseFloat(resultado);
+const volAgregadoGrueso = isNaN(parseFloat(vag)) ? 0 : parseFloat(vag);
+
+
+const volAgregadoFinom3 = (1-(volAire+volCemento+volAgregadoGrueso+volAgua)).toFixed(4);
+const volAgregadoFinoKg = (volAgregadoFinom3*2610);
 
   return (
     <>
@@ -31,11 +39,15 @@ function Resultado() {
         <h2 className="font-semibold">2. Resistencia con factor de seguridad</h2>
         <p>Resistencia: {fcsolve} kg/cm2</p>
         <h2 className="font-semibold">3.Volumen de cemento</h2>
-        <p>cantidad de cemento: {(((resultado*1000)/concretoConAire)/densidadConvertido).toFixed(4)} kg</p>
+        <p>cantidad de cemento: {volCemento} m3</p>
         <h2 className="font-semibold">4. Volumen de aire</h2>
-        <p>Tmn agregado: {tmnAgregado/100} m3</p>
+        <p>Tmn agregado: {volAire} m3</p>
         <h2 className="font-semibold">5. Volumen de Agregado Grueso</h2>
-        <p>Vag: {vag} m3</p>
+        <p>Vag: {(volAgregadoGrueso).toFixed(5)} m3</p>
+        <h2 className="font-semibold">6. Contenido de agregado fino m3</h2>
+        <p>{volAgregadoFinom3}</p>
+        <h2 className="font-semibold">6.1 Contenido de agregado fino kg</h2>
+        <p>{(volAgregadoFinoKg).toFixed(3)}</p>
 
       </div>
     </>
