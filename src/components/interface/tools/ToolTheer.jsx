@@ -17,6 +17,7 @@ function ToolTheer() {
   const [tmn, setTmn] = useState("");
   const [mf, setMf] = useState("");
   const setVAG = useStore((state) => state.setVAG);
+  const setAgregadoGrueso = useStore((state) => state.setAgregadoGrueso);
   const handleCalculate = () => {
     const table = {
       '3/8"': { 2.4: 0.5, 2.6: 0.48, 2.8: 0.46, 3: 0.44 },
@@ -32,12 +33,15 @@ function ToolTheer() {
     const coeficiente = table[tmn]?.[mf];
     if (coeficiente) {
       const agregadoGrueso = coeficiente * 1610;
+      console.log(agregadoGrueso);
+      setAgregadoGrueso(agregadoGrueso); // Actualiza el store
       const vag = agregadoGrueso / 2620;
       setVAG(vag);
     } else {
       alert("Por favor, ingrese valores válidos.");
     }
   };
+  
   return (
     <>
       <Dialog>
@@ -63,7 +67,7 @@ function ToolTheer() {
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">
-                      <label className="w-1/2 px-2 text-stone-600 text-start">
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
                         TMN
                       </label>
                       <select
@@ -83,7 +87,7 @@ function ToolTheer() {
                       </select>
                     </div>
                     <div className="flex mx-auto">
-                      <label className="w-1/2 px-2 text-stone-600 text-start">
+                      <label className="w-2/3 px-2 text-stone-600 text-start">
                         Modulo de Finura
                       </label>
                       <select

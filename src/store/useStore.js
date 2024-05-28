@@ -60,7 +60,19 @@ const useStore = create((set) => ({
   /* 05. calculo del volumen de agragado grueso */
   vag: 0,
   setVAG: (vag) => set({ vag }),
+  /* 05.1 calculo del volumen de agragado grueso */
+  agregadoGrueso: 0,
+  setAgregadoGrueso: (value) => set({ agregadoGrueso: value }),
 
+  /* 06. Correcion */
+  agregadoFinoAbsorcion: 0,
+  agregadoGruesoAbsorcion: 0,
+  agregadoFinoHumedad: 0,
+  agregadoGruesoHumedad: 0,
+  setAgregadoFinoAbsorcion: (value) => set({ agregadoFinoAbsorcion: value }),
+  setAgregadoGruesoAbsorcion: (value) => set({ agregadoGruesoAbsorcion: value }),
+  setAgregadoFinoHumedad: (value) => set({ agregadoFinoHumedad: value }),
+  setAgregadoGruesoHumedad: (value) => set({ agregadoGruesoHumedad: value }),
 }));
  
 

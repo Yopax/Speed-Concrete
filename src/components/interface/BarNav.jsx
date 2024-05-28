@@ -2,6 +2,7 @@ import React from 'react'
 import ToolOne from './tools/ToolOne'
 import ToolTwo from './tools/ToolTwo'
 import ToolTheer from './tools/ToolTheer'
+import ToolFour from './tools/ToolFour'
 
 function BarNav() {
   return (
@@ -10,6 +11,7 @@ function BarNav() {
         <ToolOne/>
         <ToolTwo/>
         <ToolTheer/>
+        <ToolFour/>
       </div>
     </>
   )
