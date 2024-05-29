@@ -11,34 +11,47 @@ import {
    
   const invoices = [
     {
-      invoice: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
+      invoice: "Muros de Cimentación y Zapatas",
+      paymentStatus: "3",
+      paymentMethod: "1",
     },
     {
-      invoice: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
+      invoice: "Cajones de cimentación",
+      paymentStatus: "3",
+      paymentMethod: "1",
     },
     {
-      invoice: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
+      invoice: "Vigas y muros reforzados",
+      paymentStatus: "4",
+      paymentMethod: "1",
     },
     {
-      invoice: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
+      invoice: "Columnas para edificios",
+      paymentStatus: "4",
+      paymentMethod: "1",
+    },
+    {
+      invoice: "Pavimentos y losas",
+      paymentStatus: "3",
+      paymentMethod: "1",
+    },
+    {
+      invoice: "Concreto masivo ",
+      paymentStatus: "3",
+      paymentMethod: "1",
     },
   ]
    
   export function TableTwo() {
     return (
       <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Tipos de Construcción</TableHead>
+            <TableHead>Máximo</TableHead>
+            <TableHead>Mínimo</TableHead>
+          </TableRow>
+        </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
             <TableRow key={invoice.invoice}>

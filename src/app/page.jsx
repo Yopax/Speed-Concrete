@@ -6,6 +6,7 @@ import TableOne from "@/components/interface/TableOne";
 import { TableTwo } from "@/components/interface/TableTwo";
 import DescargarInPdf from "@/components/interface/documents/DescargarInPdf";
 import DescargarInWord from "@/components/interface/documents/DescargarInWord";
+import PdfDescarga from "@/components/interface/documents/PdfDescarga";
 import Facebook from "@/components/interface/icons/Facebook";
 import Github from "@/components/interface/icons/Github";
 import Linkedin from "@/components/interface/icons/Linkedin";
@@ -24,27 +25,20 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="flex w-[95%]  mx-auto my-10 max-sm:my-1 space-x-2 max-[1024px]:gap-2 max-[1024px]:grid-cols-1 max-[1024px]:grid max-[768px]:grid-cols-1 max-[768px]:grid max-[768px]:my-2  max-sm:flex-col max-sm:space-x-0 max-[768px]:space-x-0 ">
+        <div className="flex w-[95%]  mx-auto my-[50px] h-full max-sm:my-1 space-x-2 max-[1024px]:gap-2 max-[1024px]:grid-cols-1 max-[1024px]:grid max-[768px]:grid-cols-1 max-[768px]:grid max-[768px]:my-2  max-sm:flex-col max-sm:space-x-0 max-[768px]:space-x-0 ">
           <div className="max-[768px]:w-full max-[1024px]:w-full border-sky-700 border max-sm:mt-2 w-1/3 h-[500px] max-sm:w-full">
             <BarNav />
             <div className="flex-col">
               <p className=" mt-2 ml-5 text-xs font-bold ">
                 SpeedConcrete - Tabla de Resultado Finales
               </p>
-              <p className="text-xs w-[90%] mx-auto my-2">
-                Speed Concrete calcula el diseño de mezcla de concreto según las
-                normas del ACI. El objetivo es desarrollar una mezcla de
-                concreto que cumpla con los requisitos de resistencia y
-                trabajabilidad para ser utilizada en diversas aplicaciones de
-                construcción.
-              </p>
               <TableOne />
               <p className=" mt-4 ml-5 mb-2 text-xs font-bold ">
-                Tabla informativa - Asentamiento
+                Tabla informativa - Asentamiento (pulg.)
               </p>
               <TableTwo />
               <div className="flex space-x-2 justify-center mt-2"></div>
-              <div className="flex space-x-2 justify-center my-3">
+              <div className="flex space-x-2 justify-center my-3 max-sm:my-0">
                 <motion.button
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.4 }}
@@ -76,11 +70,12 @@ export default function Home() {
             <Badge variant="outline">Resultados</Badge>
             <Resultado />
             <div className="flex space-x-2 mt-7 justify-center">
-              <DescargarInPdf />
+            
               <DescargarInWord />
+             <PdfDescarga />
             </div>
             <p className="text-center text-xs">
-              Descarga tu informe en cualquier formato.
+              Completa los pasos y descarga tu informe.
             </p>
           </div>
           <div className={styleOne}>
