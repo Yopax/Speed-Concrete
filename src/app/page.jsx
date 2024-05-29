@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <>
-    <MyModal />
+      <MyModal />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -44,10 +44,30 @@ export default function Home() {
                 Descarga tu informe en cualquier formato.
               </p>
               <div className="flex space-x-2 justify-center my-3">
-                <Linkedin />
-                <Github />
-                <Facebook />
-                <YouTube />
+                <motion.button
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.4 }}
+                >
+                  <Linkedin />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.4 }}
+                >
+                  <Github />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.4 }}
+                >
+                  <Facebook />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.3 }}
+                  whileTap={{ scale: 0.4 }}
+                >
+                  <YouTube />
+                </motion.button>
               </div>
             </div>
           </div>
