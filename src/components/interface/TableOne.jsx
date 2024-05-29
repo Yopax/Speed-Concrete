@@ -106,7 +106,7 @@ function TableOne() {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell>Agregado grueso</TableCell>
+            <TableCell>AG grueso</TableCell>
             <TableCell>{correcionHumedad2.toFixed(2)}</TableCell>
             <TableCell>
               {totalkg ? ((correcionHumedad2 / totalkg) * 100).toFixed(2) : 0}
@@ -114,7 +114,7 @@ function TableOne() {
             <TableCell>{totalkg ? ((correcionHumedad2 / totalkg) * 100 / 100).toFixed(4) : 0}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Agregado fino</TableCell>
+            <TableCell>AG fino</TableCell>
             <TableCell>{correcionHumedad1.toFixed(2)}</TableCell>
             <TableCell>
               {totalkg ? ((correcionHumedad1 / totalkg) * 100).toFixed(2) : 0}

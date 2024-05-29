@@ -3,6 +3,7 @@ import ToolOne from './tools/ToolOne'
 import ToolTwo from './tools/ToolTwo'
 import ToolTheer from './tools/ToolTheer'
 import ToolFour from './tools/ToolFour'
+import { ModeToggle } from '../theme/ButtonDarkMode'
 
 function BarNav() {
   return (
@@ -12,6 +13,7 @@ function BarNav() {
         <ToolTwo/>
         <ToolTheer/>
         <ToolFour/>
+        <ModeToggle />
       </div>
     </>
   )

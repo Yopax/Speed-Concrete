@@ -10,7 +10,8 @@ export default function Home() {
       <div className="flex w-[95%]  mx-auto my-10 space-x-2  max-sm:flex-col max-sm:space-x-0 ">
         <div className=" border-sky-700 border max-sm:mt-2 w-1/3 h-[500px] max-sm:w-full">
           <BarNav />
-          <div className="flex">
+          <div className="flex-col">
+          <Badge variant="outline" className="mb-5 mt-2 ml-5 ">Tabla de Resultado Finales</Badge>
             <TableOne />
           </div>
         </div>
