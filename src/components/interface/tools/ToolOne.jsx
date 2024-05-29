@@ -96,7 +96,7 @@ function ToolOne() {
         <DialogTrigger className="font-sans text-xs h-20 w-20  text-white">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
-            <p>Paso Uno</p>
+            <p>Paso 1</p>
           </div>
         </DialogTrigger>
         <DialogContent>
@@ -104,19 +104,19 @@ function ToolOne() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">Are you absolutely sure?</p>
+                <p className="font-sans">Configuración de Datos</p>
               </div>
             </DialogTitle>
             <DialogDescription asChild="asChild">
               <div>
                 <p className="font-sans text-start mb-2">
-                  Exction Description One
+                  Cantidad de agua
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">
                       <label className="w-2/3 px-2 text-stone-600 text-start">
-                        Selección el asentamiento
+                        Asentamiento (pulg.)
                       </label>
                       <select
                         value={fila === null ? "" : fila}

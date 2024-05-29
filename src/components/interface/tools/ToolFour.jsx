@@ -33,12 +33,12 @@ function ToolFour() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">Are you absolutely sure?</p>
+                <p className="font-sans">Configuración de Datos</p>
               </div>
             </DialogTitle>
             <DialogDescription asChild="asChild">
               <div>
-                <p className="font-sans text-start mb-2">Absorcion %</p>
+                <p className="font-sans text-start mb-2">Absorción %</p>
                 <div className="flex">
                   <div className="flex-col w-full divide-y divide-stone-200 border-x  border-y  mx-auto">
                     <div className="flex mx-auto">

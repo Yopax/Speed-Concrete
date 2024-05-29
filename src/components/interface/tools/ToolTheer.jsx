@@ -56,13 +56,13 @@ function ToolTheer() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">Are you absolutely sure?</p>
+                <p className="font-sans">Configuración de Datos</p>
               </div>
             </DialogTitle>
             <DialogDescription asChild="asChild">
               <div>
                 <p className="font-sans text-start mb-2">
-                  Exction Description One
+                Contenido de agregado grueso
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">

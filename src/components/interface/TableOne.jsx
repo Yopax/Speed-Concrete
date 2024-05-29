@@ -98,7 +98,7 @@ function TableOne() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Meterial</TableHead>
+            <TableHead>Material</TableHead>
             <TableHead>Peso por m3 (Kg)</TableHead>
             <TableHead>Porcentaje (%)</TableHead>
             <TableHead>Volumen (m3)</TableHead>

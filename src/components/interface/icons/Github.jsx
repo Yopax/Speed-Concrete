@@ -6,7 +6,7 @@ function Github() {
   return (
     <>
       <Link target="blank" href="https://github.com/Yopax">
-        <FaGithubSquare className="w-8 h-8" />
+        <FaGithubSquare className="w-6 h-6" />
       </Link>
     </>
   );

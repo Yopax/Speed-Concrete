@@ -52,7 +52,7 @@ function ToolTwo() {
         <DialogTrigger className="font-sans text-xs h-20 w-20 text-white">
           <div className="flex flex-col items-center justify-center">
             <IconOne />
-            <p>Paso Dos</p>
+            <p>Paso 2</p>
           </div>
         </DialogTrigger>
         <DialogContent>
@@ -60,13 +60,13 @@ function ToolTwo() {
             <DialogTitle>
               <div className="flex space-x-2">
                 <IconOne />
-                <p className="font-sans">¿Estás absolutamente seguro?</p>
+                <p className="font-sans">Configuración de Datos</p>
               </div>
             </DialogTitle>
             <DialogDescription asChild>
               <div>
                 <p className="font-sans text-start mb-2">
-                  Descripción exacta uno
+                Resistencia y cantidad de cemento
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">

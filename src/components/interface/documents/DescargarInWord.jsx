@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 function DescargarInWord() {
   const downloadDocument = async () => {
+    
     // Crear el título y las secciones del documento
     const title = new Paragraph({
       children: [
@@ -153,7 +154,7 @@ function DescargarInWord() {
 
   return (
     <>
-      <div className="flex justify-between mt-5 space-x-2 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-2">
+      <div className="flex justify-between  space-x-2 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-2">
         <Button
           className="text-xs"
           onClick={downloadDocument}

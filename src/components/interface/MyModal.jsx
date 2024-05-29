@@ -39,13 +39,13 @@ export default function MyModal() {
                 leaveFrom="opacity-100 transform-[scale(100%)]"
                 leaveTo="opacity-0 transform-[scale(95%)]"
               >
-                <DialogPanel className="w-[30%] max-w-md bg-white border border-sky-700 p-6 backdrop-blur-2xl">
+                <DialogPanel className="w-[30%] max-sm:w-[90%] max-w-md bg-white border border-sky-700 p-6 backdrop-blur-2xl">
                   <DialogTitle
                     as="h3"
                     className=" text-base/7 font-medium text-black"
                   >
                     <div className="flex justify-between">
-                    <p>Speed Structural</p>
+                    <p>Speed Concrete</p>
                     <Button
                       className=" inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
                       onClick={close}

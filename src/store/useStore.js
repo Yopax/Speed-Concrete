@@ -8,7 +8,7 @@ const useStore = create((set) => ({
   /* 02. calculo resictencia del concreto con f´c */
   concreteStrength: 0,
   setConcreteStrength: (strength) => set({ concreteStrength: strength }),
-  fcsolve: "",
+  fcsolve: 0,
   setFcsolve: (value) => set({ fcsolve: value }),
   /* 03. calculo resictencia del concreto con f´c */
   concretoConAire: undefined,
