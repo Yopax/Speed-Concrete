@@ -45,18 +45,17 @@ function PdfDescarga() {
     : parseFloat(
         ((resultado * 1000) / concretoConAire / densidadConvertido).toFixed(4)
       );
-  const volCementoKg =  isNaN(
+  const volCementoKg = isNaN(
     parseFloat(
-      ((resultado * 1000) / concretoConAire ).toFixed(2)
+      ((resultado * 1000) / concretoConAire).toFixed(2)
     )
   )
     ? 0
     : parseFloat(
-        ((resultado * 1000) / concretoConAire ).toFixed(2)
-      );  
+        ((resultado * 1000) / concretoConAire).toFixed(2)
+      );
   const volAgua = isNaN(parseFloat(resultado)) ? 0 : parseFloat(resultado);
   const volAguaTrans = resultado * 1000;
-  console.log(`agua: ${volAguaTrans}`);
   const volAgregadoGrueso = isNaN(parseFloat(vag)) ? 0 : parseFloat(vag);
   const volAgregadoFinom3 = (
     1 -
@@ -67,19 +66,11 @@ function PdfDescarga() {
     volAguaTrans +
     volAgregadoFinoKg *
       ((agregadoGruesoAbsorcion - agregadoGruesoHumedad) / 100);
-  console.log(`dato1: ${volAguaTrans + volAgregadoFinoKg}`);
-  console.log(
-    `dato2: ${(agregadoGruesoAbsorcion - agregadoGruesoHumedad) / 100}`
-  );
-  console.log(`correcion: ${correcionAbsorcion1}`);
   const correcionAbsorcion2 =
     agregadoGrueso * ((agregadoFinoAbsorcion - agregadoFinoHumedad) / 100);
 
   const a = 100 + parseFloat(agregadoGruesoHumedad);
   const correcionHumedad1 = volAgregadoFinoKg * (a / 100);
-  console.log(`correcion humedad1: ${a}`);
-  console.log(`correcion humedad2: ${correcionHumedad1}`);
-  console.log(`correcion humedad: ${correcionHumedad1}`);
 
   const b = 100 + parseFloat(agregadoFinoHumedad);
   const correcionHumedad2 = agregadoGrueso * (b / 100);
@@ -90,6 +81,11 @@ function PdfDescarga() {
     (resultado * 1000) / concretoConAire +
     (correcionAbsorcion1 + correcionAbsorcion2);
 
+    const volCemento2 =
+    resultado && concretoConAire
+      ? parseFloat(((resultado * 1000) / concretoConAire).toFixed(4))
+      : 0;  
+
   const handleDownload = () => {
     const props = {
       outputType: "save",
@@ -99,22 +95,22 @@ function PdfDescarga() {
       compress: true,
       logo: {
         src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/logo.png",
-        width: 53.33, // aspect ratio = width/height
+        width: 53.33,
         height: 26.66,
         margin: {
-          top: 0, // negative or positive num, from the current position
-          left: 0 // negative or positive num, from the current position
-        }
+          top: 0,
+          left: 0,
+        },
       },
       stamp: {
         inAllPages: true,
         src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/qr_code.jpg",
-        width: 20, // aspect ratio = width/height
+        width: 20,
         height: 20,
         margin: {
-          top: 0, // negative or positive num, from the current position
-          left: 0 // negative or positive num, from the current position
-        }
+          top: 0,
+          left: 0,
+        },
       },
       business: {
         name: "Speed Concrete",
@@ -128,8 +124,7 @@ function PdfDescarga() {
         label: "Tipo de Proyecto:",
         name: "Diseño de mezcla de concreto",
         address: "sustentado en normas ACI.",
-        phone: `Diseño de: ${fcsolve}`,
-        email: "client@website.al",
+        phone: `Diseño de mezcla mas factor de seguridad: ${fcsolve}fc`,
         otherInfo: "Resultados:",
       },
       invoice: {
@@ -139,64 +134,75 @@ function PdfDescarga() {
           {
             title: "#",
             style: {
-              width: 10
-            }
+              width: 10,
+            },
           },
           {
-            title: "Title",
+            title: "Material",
             style: {
-              width: 30
+                width: 94,
+                fontSize: 12,
+                fontStyle: "bold"
             }
-          },
-          {
-            title: "Description",
+        },
+
+        {
+            title: "Peso por m3 (Kg)",
             style: {
-              width: 80
+                fontSize: 12,
+                fontStyle: "bold"
             }
-          },
-          { title: "Price" },
-          { title: "Quantity" },
-          { title: "Unit" },
-          { title: "Total" }
+        },
+        {
+          title: "Porcentaje (%)	",
+          style: {
+              fontSize: 12,
+              fontStyle: "bold"
+          }
+      },
+      {
+        title: "Volumen (m3)",
+        style: {
+            fontSize: 12,
+            fontStyle: "bold"
+        }
+    }, 
         ],
-        table: Array.from(Array(15), (item, index) => [
-          index + 1,
-          "There are many variations ",
-          "Lorem Ipsum is simply dummy text dummy text ",
-          200.5,
-          4.5,
-          "m2",
-          400.5
-        ]),
+        table: [
+          [1, "Agregado grueso",  `${correcionHumedad2.toFixed(2)}`,`${totalkg ? ((correcionHumedad2 / totalkg) * 100).toFixed(2) : 0}`,`${totalkg ? ((correcionHumedad2 / totalkg) * 100 / 100).toFixed(4) : 0}`],
+          [2, "Agregado Fino", `${correcionHumedad1.toFixed(2)}`,`${correcionHumedad1.toFixed(2)}`,`${totalkg ? ((correcionHumedad1 / totalkg) * 100 / 100).toFixed(4) : 0}` ],
+          [3, "Cemento", `${volCemento2.toFixed(2)}`,`${volCemento2.toFixed(2)}`,`${totalkg ? ((volCemento2 / totalkg) * 100 / 100).toFixed(4) : 0}` ],
+          [4, "Agua",  `${(correcionAbsorcion1 + correcionAbsorcion2).toFixed(2)}`, `${totalkg
+            ? (
+                ((correcionAbsorcion1 + correcionAbsorcion2) / totalkg) *
+                100
+              ).toFixed(2)
+            : 0}`,`${totalkg ? (((correcionAbsorcion1 + correcionAbsorcion2) / totalkg) * 100 / 100).toFixed(4) : 0}`],
+          [5, "Total", `${totalkg.toFixed(2)}`,`${totalkg
+            ? (
+                (correcionHumedad2 / totalkg) * 100 +
+                (correcionHumedad1 / totalkg) * 100 +
+                (volCemento2 / totalkg) * 100 +
+                ((correcionAbsorcion1 + correcionAbsorcion2) / totalkg) *
+                  100
+              ).toFixed(2)
+            : 0}`,`-` ],
+        ],
         additionalRows: [
           {
             col1: 'Total:',
-            col2: '145,250.50',
+            col2: `${totalkg.toFixed(2)}kg`,
             col3: 'ALL',
             style: {
-              fontSize: 14 // optional, default 12
-            }
+              fontSize: 14,
+            },
           },
-          {
-            col1: 'VAT:',
-            col2: '20',
-            col3: '%',
-            style: {
-              fontSize: 10 // optional, default 12
-            }
-          },
-          {
-            col1: 'SubTotal:',
-            col2: '116,199.90',
-            col3: 'ALL',
-            style: {
-              fontSize: 10 // optional, default 12
-            }
-          }
         ],
-        invDescLabel: "Invoice Note",
-        invDesc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+        invDescLabel: "Descripción",
+        invDesc: "Las características del concreto están en función de su uso. Por ello la selección de las proporciones por unidad cúbica de concreto debe permitir obtener un concreto con la facilidad de colocación, densidad, resistencia,durabilidad u otras propiedades que se consideran necesarias para el caso particular de la mezcla diseñada.",
+
       },
+      
       footer: {
         text: "The invoice is created on a computer and is valid without the signature and stamp.",
       },
