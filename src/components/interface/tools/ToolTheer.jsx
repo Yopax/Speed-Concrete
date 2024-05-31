@@ -62,7 +62,7 @@ function ToolTheer() {
             <DialogDescription asChild="asChild">
               <div>
                 <p className="font-sans text-start mb-2">
-                  Contenido de agregado grueso
+                  Contenido de Agregado grueso
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
