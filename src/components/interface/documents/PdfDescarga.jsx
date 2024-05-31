@@ -214,8 +214,8 @@ function PdfDescarga() {
   };
 
   return (
-    <div className="flex justify-between space-x-2 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-2">
-      <Button className="text-xs" onClick={handleDownload}>
+    <div className="w-[90%] flex justify-between space-x-2 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-2">
+      <Button className=" text-xs" onClick={handleDownload}>
         Descargar PDF
       </Button>
     </div>

@@ -96,7 +96,7 @@ function Resultado() {
           title="V. de agua"
           result={volAgua}
           und="m3"
-          description="Eloudworkstations"
+          description="volumen en m3"
         />
         <CardResult
           title="Resistencia"
@@ -152,19 +152,19 @@ function Resultado() {
           title="Agua corregida"
           result={(correcionAbsorcion1 + correcionAbsorcion2).toFixed(3)}
           und="L"
-          description="Eloudworkstations"
+          description="en litros"
         />
         <CardResult
           title="AG.F corregido"
           result={correcionHumedad1.toFixed(2)}
           und="kg"
-          description="Eloudworkstations"
+          description="agregado fino"
         />
         <CardResult
           title="AG.G corregido"
           result={correcionHumedad2.toFixed(2)}
           und="kg"
-          description="Eloudworkstations"
+          description="agregado grueso"
         />
       </div>
     </>

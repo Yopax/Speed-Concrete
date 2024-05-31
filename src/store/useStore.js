@@ -80,6 +80,12 @@ const useStore = create((set) => ({
   setAgregadoGruesoAbsorcion: (value) => set({ agregadoGruesoAbsorcion: value }),
   setAgregadoFinoHumedad: (value) => set({ agregadoFinoHumedad: value }),
   setAgregadoGruesoHumedad: (value) => set({ agregadoGruesoHumedad: value }),
+
+  /* 07.Datos utilizados para el calculo */
+  asentamiento: null,
+  tmnAgregado2: null,
+  setAsentamiento: (value) => set({ asentamiento: value }),
+  setTmnAgregado2: (value) => set({ tmnAgregado: value }),
 }));
  
 

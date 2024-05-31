@@ -75,7 +75,7 @@ function ToolTheer() {
                         onChange={(e) => setTmn(e.target.value)}
                         className="flex h-5 w-1/3 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
                       >
-                        <option value="">Seleccione TMN</option>
+                        <option value="">Seleccione</option>
                         <option value='3/8"'>3/8"</option>
                         <option value='1/2"'>1/2"</option>
                         <option value='3/4"'>3/4"</option>
@@ -95,7 +95,7 @@ function ToolTheer() {
                         onChange={(e) => setMf(e.target.value)}
                         className="flex h-5 w-1/3 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
                       >
-                        <option value="">Seleccione MF</option>
+                        <option value="">Seleccione</option>
                         <option value={2.4}>2.4</option>
                         <option value={2.6}>2.6</option>
                         <option value={2.8}>2.8</option>
