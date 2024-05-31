@@ -3,13 +3,13 @@ import React from "react";
 import { useState } from "react";
 import { useStore } from "@/store/useStore";
 import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-  } from "@/components/ui/dialog";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import IconOne from "../icons/IconOne";
 import { AiOutlineSave } from "react-icons/ai";
 
@@ -41,7 +41,7 @@ function ToolTheer() {
       alert("Por favor, ingrese valores válidos.");
     }
   };
-  
+
   return (
     <>
       <Dialog>
@@ -62,7 +62,7 @@ function ToolTheer() {
             <DialogDescription asChild="asChild">
               <div>
                 <p className="font-sans text-start mb-2">
-                Contenido de agregado grueso
+                  Contenido de agregado grueso
                 </p>
                 <div className="flex">
                   <div className="flex-col w-[90%] divide-y divide-stone-200 border-x  border-y  mx-auto">
@@ -76,14 +76,14 @@ function ToolTheer() {
                         className="flex h-5 w-1/3 text-stone-600 font-sans  bg-transparent px-3 text-xs border-l focus-visible:outline-none"
                       >
                         <option value="">Seleccione</option>
-                        <option value='3/8"'>3/8"</option>
-                        <option value='1/2"'>1/2"</option>
-                        <option value='3/4"'>3/4"</option>
-                        <option value='1"'>1"</option>
-                        <option value='1 1/2"'>1 1/2"</option>
-                        <option value='2"'>2"</option>
-                        <option value='3"'>3"</option>
-                        <option value='6"'>6"</option>
+                        <option value='3/8"'>3/8&quot;</option>
+                        <option value='1/2"'>1/2&quot;</option>
+                        <option value='3/4"'>3/4&quot;</option>
+                        <option value='1"'>1&quot;</option>
+                        <option value='1 1/2"'>1 1/2&quot;</option>
+                        <option value='2"'>2&quot;</option>
+                        <option value='3"'>3&quot;</option>
+                        <option value='6"'>6&quot;</option>
                       </select>
                     </div>
                     <div className="flex mx-auto">
