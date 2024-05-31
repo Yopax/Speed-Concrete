@@ -4,17 +4,14 @@ import Graph2 from "@/components/graficas/Graph2";
 import BarNav from "@/components/interface/BarNav";
 import MyModal from "@/components/interface/MyModal";
 import NavBar from "@/components/interface/NavBar";
-import NavBarCalculo from "@/components/interface/NavBar";
 import Resultado from "@/components/interface/Resultado";
 import TableOne from "@/components/interface/TableOne";
 import { TableTwo } from "@/components/interface/TableTwo";
-import DescargarInWord from "@/components/interface/documents/DescargarInWord";
-import PdfDescarga from "@/components/interface/documents/PdfDescarga";
+import DescargarInPdf from "@/components/interface/documents/DescargarInPdf";
 import Facebook from "@/components/interface/icons/Facebook";
 import Github from "@/components/interface/icons/Github";
 import Linkedin from "@/components/interface/icons/Linkedin";
 import YouTube from "@/components/interface/icons/YouTube";
-import { ModeToggle } from "@/components/theme/ButtonDarkMode";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -75,7 +72,7 @@ export default function Home() {
             <Badge variant="outline">Resultados</Badge>
             <Resultado />
             <div className="flex space-x-2 mt-7 justify-center">
-              <PdfDescarga />
+              <DescargarInPdf />
             </div>
             <p className="text-center text-xs">
               Completa todos los pasos y descarga tu informe.

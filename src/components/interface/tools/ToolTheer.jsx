@@ -33,7 +33,7 @@ function ToolTheer() {
     const coeficiente = table[tmn]?.[mf];
     if (coeficiente) {
       const agregadoGrueso = coeficiente * 1610;
-      console.log(agregadoGrueso);
+
       setAgregadoGrueso(agregadoGrueso); // Actualiza el store
       const vag = agregadoGrueso / 2620;
       setVAG(vag);

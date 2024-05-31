@@ -67,7 +67,7 @@ function ToolOne() {
     } else if (columna === 6) {
       valor = 0.3;
     } else {
-      console.log("La columna está fuera de rango.");
+ 
       return null;
     }
     return valor;
@@ -78,15 +78,13 @@ function ToolOne() {
     const valorCalculado = calcularValor(columna);
     
     // Llamar correctamente a calcularValor
-    console.log(`Valor obtenido: ${valorObtenido}`);
-    console.log(`Valor calculado: ${valorCalculado}`);
+
 
     if (valorObtenido !== null && valorCalculado !== null) {
       setResultado(valorObtenido / 1000);
       setTMNAgregado(valorCalculado);
 
     } else {
-      console.log("No se pudo calcular el valor debido a valores nulos.");
     }
   };
 

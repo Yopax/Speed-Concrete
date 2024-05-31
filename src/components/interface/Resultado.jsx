@@ -55,7 +55,6 @@ function Resultado() {
       );  
   const volAgua = isNaN(parseFloat(resultado)) ? 0 : parseFloat(resultado);
   const volAguaTrans = resultado * 1000;
-  console.log(`agua: ${volAguaTrans}`);
   const volAgregadoGrueso = isNaN(parseFloat(vag)) ? 0 : parseFloat(vag);
   const volAgregadoFinom3 = (
     1 -
@@ -66,19 +65,14 @@ function Resultado() {
     volAguaTrans +
     volAgregadoFinoKg *
       ((agregadoGruesoAbsorcion - agregadoGruesoHumedad) / 100);
-  console.log(`dato1: ${volAguaTrans + volAgregadoFinoKg}`);
-  console.log(
-    `dato2: ${(agregadoGruesoAbsorcion - agregadoGruesoHumedad) / 100}`
-  );
-  console.log(`correcion: ${correcionAbsorcion1}`);
+  
+
   const correcionAbsorcion2 =
     agregadoGrueso * ((agregadoFinoAbsorcion - agregadoFinoHumedad) / 100);
 
   const a = 100 + parseFloat(agregadoGruesoHumedad);
   const correcionHumedad1 = volAgregadoFinoKg * (a / 100);
-  console.log(`correcion humedad1: ${a}`);
-  console.log(`correcion humedad2: ${correcionHumedad1}`);
-  console.log(`correcion humedad: ${correcionHumedad1}`);
+ 
 
   const b = 100 + parseFloat(agregadoFinoHumedad);
   const correcionHumedad2 = agregadoGrueso * (b / 100);
